@@ -23,7 +23,7 @@ public class InheritancePanel extends JPanel
 				textArea.setText(baseController.showMoneyAmount());
 				
 				String temp = "the sorted contents are: \n";
-				for(Wallet current : baseController.getWallets())
+				for(Wallet current : baseController. //getSillyThings my version
 				{
 					temp += current.toString() + "\n";
 				}

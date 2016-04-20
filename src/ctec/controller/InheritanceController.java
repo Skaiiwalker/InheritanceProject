@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import ctec.model.Wallet;
 import ctec.model.ZeldaWallet;
 import ctec.model.ImaginaryWallet;
+import java.awt.List;
 
 public class InheritanceController 
 {
@@ -20,6 +21,11 @@ public class InheritanceController
 		String moneyAmount = "";
 		
 		return moneyAmount;
+	}
+	
+	public Wallet getWallets()
+	{
+		
 	}
 	
 	private void makeWalletList()

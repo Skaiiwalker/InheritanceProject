@@ -35,4 +35,34 @@ public abstract class Wallet
 	{
 		this.money = money;
 	}
+	
+	
+	/**
+	 * If the supplied variable compared comes before the calling variable
+	 * return 1
+	 * If the supplied variable is after the calling variable return -1
+	 * Else if they are the same, return 0
+	 */
+	public int compareTo(Object compared)
+	{
+		int comparedValue = Integer.MIN_VALUE;
+		
+		if(compared instanceof Wallet)
+		{
+			if(this.getMoney() > ((Wallet) compared).getMoney())
+			{
+				comparedValue = 1;
+			}
+			else if(this.getMoney() < ((Wallet) compared).getMoney())
+			{
+				comparedValue = -1;
+			}
+			else
+			{
+				comparedValue = 0;
+			}
+		}
+		
+		return comparedValue;
+	}
 }
