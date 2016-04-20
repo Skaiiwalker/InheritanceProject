@@ -33,4 +33,9 @@ public class InheritanceController
 	{
 		
 	}
+	
+	public void insertionSort()
+	{
+		
+	}
 }
