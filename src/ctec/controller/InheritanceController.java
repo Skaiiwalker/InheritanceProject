@@ -4,35 +4,39 @@ import java.util.ArrayList;
 import ctec.model.Wallet;
 import ctec.model.ZeldaWallet;
 import ctec.model.ImaginaryWallet;
+import ctec.model.WeirdThing;
 import java.awt.List;
+import ctec.view.InheritanceFrame;
 
 public class InheritanceController 
 {
+	private int start;
+	private InheritanceFrame baseFrame;
+	
 	public InheritanceController()
 	{
 		//build all model components
-		makeWalletList();
-		//build view
+		this.weirdThings = new ArrayList<WeirdThing>();
+		makeWeirdList();
+		baseFrame = new InheritanceFrame(this);
 	}
-	private ArrayList<Wallet> wallets;
+	private ArrayList<WeirdThing> weirdThings;
 	
-	public String showMoneyAmount()
+	public String showWeirdLevels()
 	{
-		String moneyAmount = "";
+		String weirdThings = "";
+		for(WeirdThing currentWeird : weirdThings)
+		{
+			weirdLevels.concat("This is a " + currentWeird.toString() + " and has a weirdness level of " + currentWeird.weirdnessLevel() + "\n");
+		}
 		
-		return moneyAmount;
+		return weirdLevels;
 	}
 	
-	public Wallet getWallets()
+	private void makeWeirdList()
 	{
-		
-	}
-	
-	private void makeWalletList()
-	{
-		wallets.add(new ZeldaWallet());
-		wallets.add(new ImaginaryWallet());
-		//keep going....
+		weirdThings.add(new ZeldaWallet());
+		weirdThings.add(new ImaginaryWallet());
 	}
 	
 	public void start()

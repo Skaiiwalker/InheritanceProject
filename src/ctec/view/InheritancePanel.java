@@ -11,6 +11,40 @@ public class InheritancePanel extends JPanel
 	private InheritanceController baseController;
 	private JButton sortButton;
 	private JTextArea textArea;
+	private SpringLayout baseLayout;
+	private JScrollPane textPane;
+	
+	public InheritancePanel(InheritanceController baseController)
+	{
+		this.baseController = baseController;
+		sortButton = new JButton("Click here to sort the data");
+		textArea = new JTextArea(10, 20);
+		baseLayout = new SpringLayout();
+		
+		setupPane();
+		setupPanel();
+		setupLayout();
+		setupListeners();
+	}
+	
+	private void setupPane()
+	{
+		textPane = new JScrollPane();
+		
+	}
+	
+	private void setupPanel()
+	{
+		this.setLayout(baseLayout);
+		this.add(textPane);
+		this.add(sortButton);
+		textArea.setText(baseController.showWeirdLevels());
+	}
+	
+	private void setupLayout()
+	{
+		
+	}
 	
 	private void setupListeners()
 	{
@@ -20,14 +54,7 @@ public class InheritancePanel extends JPanel
 			{
 				baseController.insertionSort();
 				
-				textArea.setText(baseController.showMoneyAmount());
-				
-				String temp = "the sorted contents are: \n";
-				for(Wallet current : baseController. //getSillyThings my version
-				{
-					temp += current.toString() + "\n";
-				}
-				textArea.setText(temp);
+				textArea.setText(baseController.showWeirdLevels());
 			}
 		});
 	}
